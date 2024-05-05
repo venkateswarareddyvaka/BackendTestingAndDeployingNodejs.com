@@ -10,7 +10,7 @@ app.use(express.json())
 app.use('/api/products',productRoute)
 
 const MONGO_URL = process.env.MONGO_URL
-const port = process.env.PORT || 3000
+// const port = process.env.PORT || 3000
 
 
 
@@ -21,7 +21,7 @@ app.get('/',(req,res)=>{
 mongoose.connect(MONGO_URL)
     .then(()=>{
         console.log("Connected to database")
-        app.listen(port,()=>{
+        app.listen(3000,()=>{
             console.log("Server started and listening to port 3000")
         }) 
     }).catch((error)=>{
