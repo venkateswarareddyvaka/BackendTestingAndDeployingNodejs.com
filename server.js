@@ -15,22 +15,23 @@ const port = process.env.PORT || 3000
 
 
 app.get('/',(req,res)=>{
-    res.send("Hello World");
+    res.send("Hello Worlds");
 })
 
-// mongoose.connect(MONGO_URL)
-//     .then(()=>{
-//         console.log("Connected to database")
-//         app.listen(port,()=>{
-//             console.log("Server started and listening to port 3000")
-//         }) 
-//     }).catch((error)=>{
-//         console.log("Error while connecting to database")
-//     })
-
 mongoose.connect(MONGO_URL)
+    .then(()=>{
+        console.log("Connected to database")
+        app.listen(port,()=>{
+            console.log("Server started and listening to port 3000")
+        }) 
+    }).catch((error)=>{
+        console.log("Error while connecting to database")
+    })
 
-app.listen(port,()=>{
-    console.log("Server started and listening to port 3000")
-}) 
+// testing to connect to mongodb
+// mongoose.connect(MONGO_URL)
+
+// app.listen(port,()=>{
+//     console.log("Server started and listening to port 3000")
+// }) 
 

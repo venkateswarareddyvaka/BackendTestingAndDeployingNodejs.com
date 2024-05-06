@@ -4,7 +4,9 @@ const express=require('express')
 
 const router = express.Router();
 
-router.get('/', getProducts)
+router.get('/', (req,res)=>{
+    res.send("Making fetch request")
+})
 
 router.get('/:id',getProduct)
 
