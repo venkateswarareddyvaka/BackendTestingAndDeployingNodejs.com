@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json())
 
-app.use('/api/products',productRoute)
+// app.use('/api/products',productRoute)
 
 const MONGO_URL = process.env.MONGO_URL
 const port = process.env.PORT || 3000
@@ -18,13 +18,17 @@ app.get('/',(req,res)=>{
     res.send("Hello World");
 })
 
-mongoose.connect(MONGO_URL)
-    .then(()=>{
-        console.log("Connected to database")
-        app.listen(port,()=>{
-            console.log("Server started and listening to port 3000")
-        }) 
-    }).catch((error)=>{
-        console.log("Error while connecting to database")
-    })
+// mongoose.connect(MONGO_URL)
+//     .then(()=>{
+//         console.log("Connected to database")
+//         app.listen(port,()=>{
+//             console.log("Server started and listening to port 3000")
+//         }) 
+//     }).catch((error)=>{
+//         console.log("Error while connecting to database")
+//     })
+
+app.listen(port,()=>{
+    console.log("Server started and listening to port 3000")
+}) 
 
