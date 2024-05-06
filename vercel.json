@@ -7,6 +7,7 @@
         "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/server.js" }
+      { "src": "/(.*)", "dest": "/server.js" },
+      { "src": "/api/products/reddy", "dest": "/server.js" }
     ]
   }
